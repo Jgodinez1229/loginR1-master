@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": "297f",
+      "fullname": "messi",
+      "email": "messi@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "a7ec",
+      "fullname": "Josue Omar",
+      "email": "josue4@gmail.com",
+      "password": "omar1"
+    },
+    {
+      "id": "a85c",
+      "fullname": "Omar Godínez",
+      "email": "omG@gmail.com",
+      "password": "345"
+    },
+    {
+      "id": "f667",
+      "fullname": "Adrian Lugo",
+      "email": "lugoA@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "bdf9",
+      "fullname": "",
+      "email": "",
+      "password": "345"
+    },
+    {
+      "id": "ef68",
+      "fullname": "Eduardo Gonzalez",
+      "email": "eduG@gmail.com",
+      "password": "edu1"
+    },
+    {
+      "id": "bea7",
+      "fullname": "Zayd Nunez",
+      "email": "zaydN@gmail.com",
+      "password": "987"
+    }
+  ]
+}

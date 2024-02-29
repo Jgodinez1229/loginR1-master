@@ -1,0 +1,64 @@
+<form [formGroup]="registerForm" (ngSubmit)="enviarUsuario()">
+  <p-card header="Ingresar al sistema" [style]="{ width: '360px' }">
+    <div class="field">
+      <input
+        type="text"
+        pInputText
+        formControlName="nombre"
+        placeholder="Nombre Completo"
+        class="w-full"
+      />
+    </div>
+    <small
+      *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)"
+      class="block p-error"
+    >
+      <div *ngIf="nombre.hasError('required')">Ingrese su Nombre</div>
+    </small>
+    <div class="field">
+      <input
+        type="text"
+        pInputText
+        formControlName="email"
+        placeholder="Ingresar E-mail"
+        class="w-full"
+      />
+    </div>
+    <small
+      *ngIf="email.invalid && (email.dirty || email.touched)"
+      class="block p-error"
+    >
+      <div *ngIf="email.hasError('required')">Ingresa E-mail</div>
+      <div *ngIf="email.hasError('email')">Email incorrecto</div>
+    </small>
+    <div class="field">
+      <p-password
+        formControlName="password"
+        name="password"
+        [toggleMask]="true"
+        styleClass="w-full"
+      ></p-password>
+    </div>
+    <small *ngIf="password.invalid && (password.dirty || password.touched)">
+      <div *ngIf="password.errors?.['required']">Contraseña requerida</div>
+    </small>
+    <div class="field">
+      <p-password
+        formControlName="confirmPassword"
+        name="confirmPassword"
+        [toggleMask]="true"
+        styleClass="w-full"
+      ></p-password>
+      <small *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)">
+          <div *ngIf="confirmPassword.errors?.['required']">Contraseña requerida</div>
+      </small>
+      <small *ngIf="registerForm.errors?.['passwordMismatch'] && password.valid && confirmPassword.valid" class="block p-error">
+          Las contraseñas no coinciden
+      </small>
+    </div>
+    <p-button label="Registrar" type="submit" styleClass="w-full" [disabled]="registerForm.invalid"></p-button>
+    <div class="mt-2">
+      ¿Tienes cuenta? <a routerLink="/login">Iniciar sesión</a>
+    </div>
+  </p-card>
+</form>
